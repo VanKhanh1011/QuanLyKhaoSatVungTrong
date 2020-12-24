@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KS_VUNGTRONGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BENHHAI">
+    <Key>
+      <PropertyRef Name="MaBH" />
+    </Key>
+    <Property Name="MaBH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TT" Type="Boolean" />
+    <Property Name="MaCT" Type="Int32" />
+    <NavigationProperty Name="CAYTRONG" Relationship="Self.FK_BENHHAI_CAYTRONG" FromRole="BENHHAI" ToRole="CAYTRONG" />
+  </EntityType>
+  <EntityType Name="CAYTRONG">
+    <Key>
+      <PropertyRef Name="MaCT" />
+    </Key>
+    <Property Name="MaCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Loai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Giong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tuoi" Type="Int32" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TT" Type="Boolean" />
+    <NavigationProperty Name="BENHHAIs" Relationship="Self.FK_BENHHAI_CAYTRONG" FromRole="CAYTRONG" ToRole="BENHHAI" />
+    <NavigationProperty Name="SAUHAIs" Relationship="Self.FK_SAUHAI_CAYTRONG" FromRole="CAYTRONG" ToRole="SAUHAI" />
+    <NavigationProperty Name="VUONs" Relationship="Self.FK_VUON_CAYTRONG" FromRole="CAYTRONG" ToRole="VUON" />
+  </EntityType>
+  <EntityType Name="DIAPHUONG">
+    <Key>
+      <PropertyRef Name="MaDP" />
+    </Key>
+    <Property Name="MaDP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Huyen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Xa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="VUONs" Relationship="Self.FK_VUON_DIAPHUONG" FromRole="DIAPHUONG" ToRole="VUON" />
+  </EntityType>
+  <EntityType Name="DIEUKIENSINHTHAI">
+    <Key>
+      <PropertyRef Name="MaDKST" />
+    </Key>
+    <Property Name="MaDKST" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NhietDoMuaNang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SuongMuoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrieuCuong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DoPH" Type="Double" />
+    <NavigationProperty Name="VUONs" Relationship="Self.FK_VUON_DIEUKIENSINHTHAI" FromRole="DIEUKIENSINHTHAI" ToRole="VUON" />
+  </EntityType>
+  <EntityType Name="DOTKHAOSAT">
+    <Key>
+      <PropertyRef Name="MaDot" />
+    </Key>
+    <Property Name="MaDot" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDot" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaNV" Type="Int32" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_DOTKHAOSAT_NHANVIEN" FromRole="DOTKHAOSAT" ToRole="NHANVIEN" />
+    <NavigationProperty Name="QUYENSOHUUs" Relationship="Self.FK_QUYENSOHUU_DOTKHAOSAT" FromRole="DOTKHAOSAT" ToRole="QUYENSOHUU" />
+    <Property Name="Ngay" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="HETHONGTUOI">
+    <Key>
+      <PropertyRef Name="MaHTT" />
+    </Key>
+    <Property Name="MaHTT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PhuongThuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NguonNuoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaKT" Type="Int32" />
+    <NavigationProperty Name="KYTHUATCANHTAC" Relationship="Self.FK_HETHONGTUOI_KYTHUATCANHTAC" FromRole="HETHONGTUOI" ToRole="KYTHUATCANHTAC" />
+  </EntityType>
+  <EntityType Name="HIENTRANG">
+    <Key>
+      <PropertyRef Name="MaHT" />
+    </Key>
+    <Property Name="MaHT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SoLuongCay" Type="Int32" />
+    <Property Name="NangSuat" Type="Double" />
+    <Property Name="TiLe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TT" Type="Boolean" />
+    <NavigationProperty Name="VUONs" Relationship="Self.FK_VUON_HIENTRANG" FromRole="HIENTRANG" ToRole="VUON" />
+  </EntityType>
+  <EntityType Name="KIEMSOATCO">
+    <Key>
+      <PropertyRef Name="MaKSC" />
+    </Key>
+    <Property Name="MaKSC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PhuongPhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaKT" Type="Int32" />
+    <NavigationProperty Name="KYTHUATCANHTAC" Relationship="Self.FK_KIEMSOATCO_KYTHUATCANHTAC" FromRole="KIEMSOATCO" ToRole="KYTHUATCANHTAC" />
+  </EntityType>
+  <EntityType Name="KYTHUATCANHTAC">
+    <Key>
+      <PropertyRef Name="MaKT" />
+    </Key>
+    <Property Name="MaKT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KhoangCachHang" Type="Double" />
+    <Property Name="LenMo" Type="Double" />
+    <NavigationProperty Name="HETHONGTUOIs" Relationship="Self.FK_HETHONGTUOI_KYTHUATCANHTAC" FromRole="KYTHUATCANHTAC" ToRole="HETHONGTUOI" />
+    <NavigationProperty Name="KIEMSOATCOes" Relationship="Self.FK_KIEMSOATCO_KYTHUATCANHTAC" FromRole="KYTHUATCANHTAC" ToRole="KIEMSOATCO" />
+    <NavigationProperty Name="VUONs" Relationship="Self.FK_VUON_KYTHUATCANHTAC" FromRole="KYTHUATCANHTAC" ToRole="VUON" />
+  </EntityType>
+  <EntityType Name="LOAIDAT">
+    <Key>
+      <PropertyRef Name="MaLD" />
+    </Key>
+    <Property Name="MaLD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DoAm" Type="Double" />
+    <Property Name="DacTrung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="VUONs" Relationship="Self.FK_VUON_LOAIDAT" FromRole="LOAIDAT" ToRole="VUON" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TT" Type="Boolean" />
+    <Property Name="MatKhau" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="DOTKHAOSATs" Relationship="Self.FK_DOTKHAOSAT_NHANVIEN" FromRole="NHANVIEN" ToRole="DOTKHAOSAT" />
+  </EntityType>
+  <EntityType Name="NONGDAN">
+    <Key>
+      <PropertyRef Name="MaND" />
+    </Key>
+    <Property Name="MaND" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MongMuon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhau" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="QUYENSOHUUs" Relationship="Self.FK_QUYENSOHUU_NONGDAN" FromRole="NONGDAN" ToRole="QUYENSOHUU" />
+  </EntityType>
+  <EntityType Name="QUYENSOHUU">
+    <Key>
+      <PropertyRef Name="MaSoHuu" />
+    </Key>
+    <Property Name="MaSoHuu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaVuon" Type="Int32" />
+    <Property Name="MaND" Type="Int32" />
+    <Property Name="MaDot" Type="Int32" />
+    <NavigationProperty Name="DOTKHAOSAT" Relationship="Self.FK_QUYENSOHUU_DOTKHAOSAT" FromRole="QUYENSOHUU" ToRole="DOTKHAOSAT" />
+    <NavigationProperty Name="NONGDAN" Relationship="Self.FK_QUYENSOHUU_NONGDAN" FromRole="QUYENSOHUU" ToRole="NONGDAN" />
+    <NavigationProperty Name="VUON" Relationship="Self.FK_QUYENSOHUU_VUON" FromRole="QUYENSOHUU" ToRole="VUON" />
+  </EntityType>
+  <EntityType Name="SAUHAI">
+    <Key>
+      <PropertyRef Name="MaSH" />
+    </Key>
+    <Property Name="MaSH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TT" Type="Boolean" />
+    <Property Name="MaCT" Type="Int32" />
+    <NavigationProperty Name="CAYTRONG" Relationship="Self.FK_SAUHAI_CAYTRONG" FromRole="SAUHAI" ToRole="CAYTRONG" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="VUON">
+    <Key>
+      <PropertyRef Name="MaVuon" />
+    </Key>
+    <Property Name="MaVuon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenVuon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaKT" Type="Int32" />
+    <Property Name="MaDKST" Type="Int32" />
+    <Property Name="MaCT" Type="Int32" />
+    <Property Name="MaLD" Type="Int32" />
+    <Property Name="MaHT" Type="Int32" />
+    <Property Name="MaDP" Type="Int32" />
+    <Property Name="DienTich" Type="Double" />
+    <NavigationProperty Name="CAYTRONG" Relationship="Self.FK_VUON_CAYTRONG" FromRole="VUON" ToRole="CAYTRONG" />
+    <NavigationProperty Name="DIAPHUONG" Relationship="Self.FK_VUON_DIAPHUONG" FromRole="VUON" ToRole="DIAPHUONG" />
+    <NavigationProperty Name="DIEUKIENSINHTHAI" Relationship="Self.FK_VUON_DIEUKIENSINHTHAI" FromRole="VUON" ToRole="DIEUKIENSINHTHAI" />
+    <NavigationProperty Name="HIENTRANG" Relationship="Self.FK_VUON_HIENTRANG" FromRole="VUON" ToRole="HIENTRANG" />
+    <NavigationProperty Name="KYTHUATCANHTAC" Relationship="Self.FK_VUON_KYTHUATCANHTAC" FromRole="VUON" ToRole="KYTHUATCANHTAC" />
+    <NavigationProperty Name="LOAIDAT" Relationship="Self.FK_VUON_LOAIDAT" FromRole="VUON" ToRole="LOAIDAT" />
+    <NavigationProperty Name="QUYENSOHUUs" Relationship="Self.FK_QUYENSOHUU_VUON" FromRole="VUON" ToRole="QUYENSOHUU" />
+  </EntityType>
+  <Association Name="FK_BENHHAI_CAYTRONG">
+    <End Role="CAYTRONG" Type="Self.CAYTRONG" Multiplicity="0..1" />
+    <End Role="BENHHAI" Type="Self.BENHHAI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAYTRONG">
+        <PropertyRef Name="MaCT" />
+      </Principal>
+      <Dependent Role="BENHHAI">
+        <PropertyRef Name="MaCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SAUHAI_CAYTRONG">
+    <End Role="CAYTRONG" Type="Self.CAYTRONG" Multiplicity="0..1" />
+    <End Role="SAUHAI" Type="Self.SAUHAI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAYTRONG">
+        <PropertyRef Name="MaCT" />
+      </Principal>
+      <Dependent Role="SAUHAI">
+        <PropertyRef Name="MaCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VUON_CAYTRONG">
+    <End Role="CAYTRONG" Type="Self.CAYTRONG" Multiplicity="0..1" />
+    <End Role="VUON" Type="Self.VUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAYTRONG">
+        <PropertyRef Name="MaCT" />
+      </Principal>
+      <Dependent Role="VUON">
+        <PropertyRef Name="MaCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VUON_DIAPHUONG">
+    <End Role="DIAPHUONG" Type="Self.DIAPHUONG" Multiplicity="0..1" />
+    <End Role="VUON" Type="Self.VUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIAPHUONG">
+        <PropertyRef Name="MaDP" />
+      </Principal>
+      <Dependent Role="VUON">
+        <PropertyRef Name="MaDP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VUON_DIEUKIENSINHTHAI">
+    <End Role="DIEUKIENSINHTHAI" Type="Self.DIEUKIENSINHTHAI" Multiplicity="0..1" />
+    <End Role="VUON" Type="Self.VUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIEUKIENSINHTHAI">
+        <PropertyRef Name="MaDKST" />
+      </Principal>
+      <Dependent Role="VUON">
+        <PropertyRef Name="MaDKST" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOTKHAOSAT_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="DOTKHAOSAT" Type="Self.DOTKHAOSAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="DOTKHAOSAT">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUYENSOHUU_DOTKHAOSAT">
+    <End Role="DOTKHAOSAT" Type="Self.DOTKHAOSAT" Multiplicity="0..1" />
+    <End Role="QUYENSOHUU" Type="Self.QUYENSOHUU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOTKHAOSAT">
+        <PropertyRef Name="MaDot" />
+      </Principal>
+      <Dependent Role="QUYENSOHUU">
+        <PropertyRef Name="MaDot" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HETHONGTUOI_KYTHUATCANHTAC">
+    <End Role="KYTHUATCANHTAC" Type="Self.KYTHUATCANHTAC" Multiplicity="0..1" />
+    <End Role="HETHONGTUOI" Type="Self.HETHONGTUOI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KYTHUATCANHTAC">
+        <PropertyRef Name="MaKT" />
+      </Principal>
+      <Dependent Role="HETHONGTUOI">
+        <PropertyRef Name="MaKT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VUON_HIENTRANG">
+    <End Role="HIENTRANG" Type="Self.HIENTRANG" Multiplicity="0..1" />
+    <End Role="VUON" Type="Self.VUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HIENTRANG">
+        <PropertyRef Name="MaHT" />
+      </Principal>
+      <Dependent Role="VUON">
+        <PropertyRef Name="MaHT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KIEMSOATCO_KYTHUATCANHTAC">
+    <End Role="KYTHUATCANHTAC" Type="Self.KYTHUATCANHTAC" Multiplicity="0..1" />
+    <End Role="KIEMSOATCO" Type="Self.KIEMSOATCO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KYTHUATCANHTAC">
+        <PropertyRef Name="MaKT" />
+      </Principal>
+      <Dependent Role="KIEMSOATCO">
+        <PropertyRef Name="MaKT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VUON_KYTHUATCANHTAC">
+    <End Role="KYTHUATCANHTAC" Type="Self.KYTHUATCANHTAC" Multiplicity="0..1" />
+    <End Role="VUON" Type="Self.VUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KYTHUATCANHTAC">
+        <PropertyRef Name="MaKT" />
+      </Principal>
+      <Dependent Role="VUON">
+        <PropertyRef Name="MaKT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VUON_LOAIDAT">
+    <End Role="LOAIDAT" Type="Self.LOAIDAT" Multiplicity="0..1" />
+    <End Role="VUON" Type="Self.VUON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIDAT">
+        <PropertyRef Name="MaLD" />
+      </Principal>
+      <Dependent Role="VUON">
+        <PropertyRef Name="MaLD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUYENSOHUU_NONGDAN">
+    <End Role="NONGDAN" Type="Self.NONGDAN" Multiplicity="0..1" />
+    <End Role="QUYENSOHUU" Type="Self.QUYENSOHUU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NONGDAN">
+        <PropertyRef Name="MaND" />
+      </Principal>
+      <Dependent Role="QUYENSOHUU">
+        <PropertyRef Name="MaND" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUYENSOHUU_VUON">
+    <End Role="VUON" Type="Self.VUON" Multiplicity="0..1" />
+    <End Role="QUYENSOHUU" Type="Self.QUYENSOHUU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VUON">
+        <PropertyRef Name="MaVuon" />
+      </Principal>
+      <Dependent Role="QUYENSOHUU">
+        <PropertyRef Name="MaVuon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KS_VUNGTRONGEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BENHHAIs" EntityType="Self.BENHHAI" />
+    <EntitySet Name="CAYTRONGs" EntityType="Self.CAYTRONG" />
+    <EntitySet Name="DIAPHUONGs" EntityType="Self.DIAPHUONG" />
+    <EntitySet Name="DIEUKIENSINHTHAIs" EntityType="Self.DIEUKIENSINHTHAI" />
+    <EntitySet Name="DOTKHAOSATs" EntityType="Self.DOTKHAOSAT" />
+    <EntitySet Name="HETHONGTUOIs" EntityType="Self.HETHONGTUOI" />
+    <EntitySet Name="HIENTRANGs" EntityType="Self.HIENTRANG" />
+    <EntitySet Name="KIEMSOATCOes" EntityType="Self.KIEMSOATCO" />
+    <EntitySet Name="KYTHUATCANHTACs" EntityType="Self.KYTHUATCANHTAC" />
+    <EntitySet Name="LOAIDATs" EntityType="Self.LOAIDAT" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="NONGDANs" EntityType="Self.NONGDAN" />
+    <EntitySet Name="QUYENSOHUUs" EntityType="Self.QUYENSOHUU" />
+    <EntitySet Name="SAUHAIs" EntityType="Self.SAUHAI" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="VUONs" EntityType="Self.VUON" />
+    <AssociationSet Name="FK_BENHHAI_CAYTRONG" Association="Self.FK_BENHHAI_CAYTRONG">
+      <End Role="CAYTRONG" EntitySet="CAYTRONGs" />
+      <End Role="BENHHAI" EntitySet="BENHHAIs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SAUHAI_CAYTRONG" Association="Self.FK_SAUHAI_CAYTRONG">
+      <End Role="CAYTRONG" EntitySet="CAYTRONGs" />
+      <End Role="SAUHAI" EntitySet="SAUHAIs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VUON_CAYTRONG" Association="Self.FK_VUON_CAYTRONG">
+      <End Role="CAYTRONG" EntitySet="CAYTRONGs" />
+      <End Role="VUON" EntitySet="VUONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VUON_DIAPHUONG" Association="Self.FK_VUON_DIAPHUONG">
+      <End Role="DIAPHUONG" EntitySet="DIAPHUONGs" />
+      <End Role="VUON" EntitySet="VUONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VUON_DIEUKIENSINHTHAI" Association="Self.FK_VUON_DIEUKIENSINHTHAI">
+      <End Role="DIEUKIENSINHTHAI" EntitySet="DIEUKIENSINHTHAIs" />
+      <End Role="VUON" EntitySet="VUONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOTKHAOSAT_NHANVIEN" Association="Self.FK_DOTKHAOSAT_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="DOTKHAOSAT" EntitySet="DOTKHAOSATs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUYENSOHUU_DOTKHAOSAT" Association="Self.FK_QUYENSOHUU_DOTKHAOSAT">
+      <End Role="DOTKHAOSAT" EntitySet="DOTKHAOSATs" />
+      <End Role="QUYENSOHUU" EntitySet="QUYENSOHUUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HETHONGTUOI_KYTHUATCANHTAC" Association="Self.FK_HETHONGTUOI_KYTHUATCANHTAC">
+      <End Role="KYTHUATCANHTAC" EntitySet="KYTHUATCANHTACs" />
+      <End Role="HETHONGTUOI" EntitySet="HETHONGTUOIs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VUON_HIENTRANG" Association="Self.FK_VUON_HIENTRANG">
+      <End Role="HIENTRANG" EntitySet="HIENTRANGs" />
+      <End Role="VUON" EntitySet="VUONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KIEMSOATCO_KYTHUATCANHTAC" Association="Self.FK_KIEMSOATCO_KYTHUATCANHTAC">
+      <End Role="KYTHUATCANHTAC" EntitySet="KYTHUATCANHTACs" />
+      <End Role="KIEMSOATCO" EntitySet="KIEMSOATCOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VUON_KYTHUATCANHTAC" Association="Self.FK_VUON_KYTHUATCANHTAC">
+      <End Role="KYTHUATCANHTAC" EntitySet="KYTHUATCANHTACs" />
+      <End Role="VUON" EntitySet="VUONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VUON_LOAIDAT" Association="Self.FK_VUON_LOAIDAT">
+      <End Role="LOAIDAT" EntitySet="LOAIDATs" />
+      <End Role="VUON" EntitySet="VUONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUYENSOHUU_NONGDAN" Association="Self.FK_QUYENSOHUU_NONGDAN">
+      <End Role="NONGDAN" EntitySet="NONGDANs" />
+      <End Role="QUYENSOHUU" EntitySet="QUYENSOHUUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUYENSOHUU_VUON" Association="Self.FK_QUYENSOHUU_VUON">
+      <End Role="VUON" EntitySet="VUONs" />
+      <End Role="QUYENSOHUU" EntitySet="QUYENSOHUUs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

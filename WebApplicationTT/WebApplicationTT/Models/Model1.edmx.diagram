@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d1d3ad5dc77842999cb7692f05ac9ecb" Name="Diagram1">
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.BENHHAI" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.CAYTRONG" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.DIAPHUONG" Width="1.5" PointX="3.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.DIEUKIENSINHTHAI" Width="1.5" PointX="3.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.DOTKHAOSAT" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.HETHONGTUOI" Width="1.5" PointX="6" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.HIENTRANG" Width="1.5" PointX="3.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.KIEMSOATCO" Width="1.5" PointX="6" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.KYTHUATCANHTAC" Width="1.5" PointX="3.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.LOAIDAT" Width="1.5" PointX="3.75" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.NHANVIEN" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.NONGDAN" Width="1.5" PointX="6" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.QUYENSOHUU" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.SAUHAI" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KS_VUNGTRONGModel.VUON" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_BENHHAI_CAYTRONG" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_SAUHAI_CAYTRONG" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_VUON_CAYTRONG" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_VUON_DIAPHUONG" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_VUON_DIEUKIENSINHTHAI" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_DOTKHAOSAT_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_QUYENSOHUU_DOTKHAOSAT" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_HETHONGTUOI_KYTHUATCANHTAC" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_VUON_HIENTRANG" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_KIEMSOATCO_KYTHUATCANHTAC" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_VUON_KYTHUATCANHTAC" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_VUON_LOAIDAT" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_QUYENSOHUU_NONGDAN" ManuallyRouted="false" />
+        <AssociationConnector Association="KS_VUNGTRONGModel.FK_QUYENSOHUU_VUON" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container-fluid p-0" >
+        <!-- Bootstrap row -->
+        <!-- cho nay con chu thich bs4 ne -->
+        <div class="container-fluid p-0">
+          <!-- Bootstrap row -->
+          <div class="row" id="body-row">
+            <!-- Sidebar -->
+            <div
+              id="sidebar-container"
+              class="sidebar-expanded d-none d-md-block" style="padding: 10px 0px;"
+            >
+              <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+              <!-- Bootstrap List Group -->
+              <ul class="list-group">
+                <!-- Separator with title -->
+                <li
+                  class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed"
+                  style="display: flex; justify-content: space-between;margin: 10px 0;padding: 20px 0px;"
+                >
+                  <small style="font-size: 40px;color: yellow;">gardenSur</small>
+                  <img src="./img/tree.png" alt="" style="width: 40px; height: 40px;border-radius: 50%;">
+                </li>
+                <!-- /END Separator -->
+                <!-- Menu with submenu -->
+                <a
+    href="index.html"
+    class="bg-dark list-group-item list-group-item-action"
+  >
+    <div
+      class="d-flex w-100 justify-content-start align-items-center"
+    >
+      <span class="fa fa-question fa-fw mr-3"></span>
+      <span  class="menu-collapsed tablinks" >  Tổng Quan</span>
+    </div>
+  </a>
+                <a
+                  href="#submenu1"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+                >
+                  <div
+                    class="d-flex w-100 justify-content-start align-items-center"
+                  >
+                    <span class="fa fa-dashboard fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Khảo Sát Vùng Trồng</span>
+                    <span class="submenu-icon ml-auto"></span>
+                  </div>
+                </a>
+                <!-- Submenu content -->
+                <div id="submenu1" class="collapse sidebar-submenu">
+                  <!-- <a
+                    href="#"
+                    class="list-group-item list-group-item-action bg-dark text-white"
+                  >
+                    <span class="menu-collapsed tablinks" onclick="openCity(event,'program')" id="defaultOpen">Chương Trình Khảo Sát</span>
+                  </a> -->
+                  <a
+                    href="NhapLieu.html"
+                    class="list-group-item list-group-item-action bg-dark text-white"
+                  >
+                    <span class="menu-collapsed tablinks">Nhập Liệu</span>
+                  </a>
+                </div>
+                <a
+                  href="#submenu2"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+                >
+                  <div
+                    class="d-flex w-100 justify-content-start align-items-center"
+                  >
+                    <span class="fa fa-user fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Vườn</span>
+                    <span class="submenu-icon ml-auto"></span>
+                  </div>
+                </a>
+                <!-- Submenu content -->
+                <div id="submenu2" class="collapse sidebar-submenu">
+                  <a
+                  href="#submenu5"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+                >
+                  <div
+                    class="d-flex w-100 justify-content-start align-items-center"
+                  >
+                    <span class="fa fa-user fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Canh Tác</span>
+                    <span class="submenu-icon ml-auto"></span>
+                  </div>
+                </a>
+                <div id="submenu5" class="collapse sidebar-submenu">
+                  <a
+                    href="KyThuatCanhTac.html"
+                    class="list-group-item list-group-item-action bg-dark text-white"
+                  >
+                    <span class="menu-collapsed tablinks">Kỹ Thuật Canh Tác</span>
+                  </a>
+                  <a
+                    href="HeThongTuoi.html"
+                    class="list-group-item list-group-item-action bg-dark text-white"
+                  >
+                    <span class="menu-collapsed tablinks">Hệ Thống Tưới</span>
+                  </a>
+                  <a
+                    href="KiemSoatCo.html"
+                    class="list-group-item list-group-item-action bg-dark text-white"
+                  >
+                    <span class="menu-collapsed tablinks">Kiểm Soát Cỏ</span>
+                  </a>
+                </div>
+                  <a
+                    href="HienTrang.html"
+                    class="list-group-item list-group-item-action bg-dark text-white"
+                  >
+                    <span class="menu-collapsed tablinks">Hiện Trạng</span>
+                  </a>
+                  <a
+                  href="DieuKienSinhThai.html"
+                  class="list-group-item list-group-item-action bg-dark text-white"
+                >
+                  <span class="menu-collapsed tablinks">Điều Kiện Sinh Thái</span>
+                </a>
+                <a
+                href="LoaiDat.html"
+                class="list-group-item list-group-item-action bg-dark text-white"
+              >
+                <span class="menu-collapsed tablinks">Loại Đất</span>
+              </a>
+              <a
+              href="Vuon.html"
+              class="list-group-item list-group-item-action bg-dark text-white"
+            >
+              <span class="menu-collapsed tablinks">Vườn</span>
+            </a>
+                </div>
+                <a
+                  href="DiaPhuong.html"
+                 
+                  class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+                >
+                  <div
+                    class="d-flex w-100 justify-content-start align-items-center"
+                  >
+                    <span class="fa fa-dashboard fa-fw mr-3"></span>
+                    <span class="menu-collapsed tablinks">Địa Phương</span>
+                
+                  </div>
+                </a>
+                <a
+                  href="NongDan.html"
+                  class="bg-dark list-group-item list-group-item-action"
+                >
+                  <div
+                    class="d-flex w-100 justify-content-start align-items-center"
+                  >
+                    <span class="fa fa-calendar fa-fw mr-3"></span>
+                    <span class="menu-collapsed tablinks">Nông Dân</span>
+                  </div>
+                </a>
+                <a
+                href="#submenu3"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+              >
+                <div
+                  class="d-flex w-100 justify-content-start align-items-center"
+                >
+                  <span class="fa fa-dashboard fa-fw mr-3"></span>
+                  <span class="menu-collapsed">Cây Trồng</span>
+                  <span class="submenu-icon ml-auto"></span>
+                </div>
+              </a>
+                <div id="submenu3" class="collapse sidebar-submenu">
+                  <a
+                    href="DanhMucCayTrong.html"
+                    class="list-group-item list-group-item-action bg-dark text-white"
+                  >
+                    <span class="menu-collapsed tablinks">Danh Mục Cây Trồng</span>
+                  </a>
+                  <a
+                    href="SauHai.html"
+                    class="list-group-item list-group-item-action bg-dark text-white"
+                  >
+                    <span class="menu-collapsed tablinks" >Sâu Hại</span>
+                  </a>
+                  <a
+                    href="BenhHai.html"
+                    class="list-group-item list-group-item-action bg-dark text-white"
+                  >
+                    <span class="menu-collapsed tablinks">Bệnh Hại</span>
+                  </a>
+                </div>
+                <a
+                href="#submenu6"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+              >
+                <div
+                  class="d-flex w-100 justify-content-start align-items-center"
+                >
+                  <span class="fa fa-dashboard fa-fw mr-3"></span>
+                  <span class="menu-collapsed">Thống Kê</span>
+                  <span class="submenu-icon ml-auto"></span>
+                </div>
+              </a>
+              <div id="submenu6" class="collapse sidebar-submenu">
+                <a
+                href="ThongKeSauHai.html"
+                class="list-group-item list-group-item-action bg-dark text-white"
+              >
+                <span class="menu-collapsed tablinks">Sâu Hại</span>
+              </a>
+              <a
+                href="ThongKeBenhHai.html"
+                class="list-group-item list-group-item-action bg-dark text-white"
+              >
+                <span class="menu-collapsed tablinks">Bệnh Hại</span>
+              </a>
+              <a
+                href="ThongKeCayTrong.html"
+                class="list-group-item list-group-item-action bg-dark text-white"
+              >
+                <span class="menu-collapsed tablinks">Thống Kê Cây Trồng</span>
+              </a>
+              <a
+              href="ThongKeDiaPhuong.html"
+              class="list-group-item list-group-item-action bg-dark text-white"
+            >
+              <span class="menu-collapsed tablinks">Thống kê Địa Phương</span>
+            </a>
+            <a
+            href="ThongKeLoaiDat.html"
+            class="list-group-item list-group-item-action bg-dark text-white"
+          >
+            <span class="menu-collapsed tablinks">Thống Kê Loại Đất</span>
+          </a>
+              </div>
+              <a
+              href="#submenu7"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+            >
+              <div
+                class="d-flex w-100 justify-content-start align-items-center"
+              >
+                <span class="fa fa-dashboard fa-fw mr-3"></span>
+                <span class="menu-collapsed">Hệ Thống</span>
+                <span class="submenu-icon ml-auto"></span>
+              </div>
+            </a>
+            <div id="submenu7" class="collapse sidebar-submenu">
+              <a
+                href="NhanVien.html"
+                class="list-group-item list-group-item-action bg-dark text-white"
+              >
+                <span class="menu-collapsed tablinks">Nhân Viên</span>
+              </a>
+              <!-- <a
+                href="#"
+                class="list-group-item list-group-item-action bg-dark text-white"
+              >
+                <span class="menu-collapsed">Người Dùng</span>
+              </a> -->
+                <span class="menu-collapsed">Xã</span>
+              </a>
+            </div>
+  
+            <a
+            href="QuyenSoHuu.html"
+            class="list-group-item list-group-item-action bg-dark text-white"
+          >
+            <span class="menu-collapsed tablinks">Quyền Sở Hữu</span>
+          </a>
+              </ul>
+              <!-- List Group END-->
+            </div>
+            <!-- sidebar-container END -->
+  
+            <!-- MAIN -->
+            <div class="col">
+              <div class="local tabcontent" id="local" style="padding: 50px;">
+                <h1 style="text-align: center;">ĐỊA PHƯƠNG</h1>
+                <table class="table">
+                  <thead>
+                    <tr style="margin-bottom: 20px;">
+                      <button class="menu-collapsed tablinks btn btn-success"
+                      ><a href="ThemDiaPhuong.html" style="color: black;text-decoration: none;"> Thêm</a></button>
+  
+                    </tr>
+                    <tr>
+                      <th></th>
+                      <th>Mã Địa Phương</th>
+                      <th>Tỉnh</th>
+                      <th>Huyện</th>
+                      <th>Xã</th>
+                      <th>Ấp</th>
+                      <th>Xử Lý</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody-getdiaphuong">
+                    <tr>
+                      <!-- <td scope="row"></td> -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                      <button class="btn btn-success deleteDP">Xóa</button>
+                      <button class="btn btn-success" 
+                      ><a href="SuaDiaPhuong.html" style="color: black;text-decoration: none;">Sửa</a></button>
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                  <tfoot>
+                   
+                  </tfoot>
+                </table>
+              </div>
+                </div>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/getDiaPhuong.js"></script>
+    <script id="rendered-js">
+        // Hide submenus
+        $('#body-row .collapse').collapse('hide');
+        
+        // Collapse/Expand icon
+        $('#collapse-icon').addClass('fa-angle-double-left');
+        
+        // Collapse click
+        $('[data-toggle=sidebar-colapse]').click(function () {
+          SidebarCollapse();
+        });
+        
+        function SidebarCollapse() {
+          $('.menu-collapsed').toggleClass('d-none');
+          $('.sidebar-submenu').toggleClass('d-none');
+          $('.submenu-icon').toggleClass('d-none');
+          $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
+        
+          // Treating d-flex/d-none on separators with title
+          var SeparatorTitle = $('.sidebar-separator-title');
+          if (SeparatorTitle.hasClass('d-flex')) {
+            SeparatorTitle.removeClass('d-flex');
+          } else {
+            SeparatorTitle.addClass('d-flex');
+          }
+        
+          // Collapse/Expand icon
+          $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
+        }
+        //# sourceURL=pen.js
+            </script>
+           
+    <!-- container -->
+   <script>
+         $(document).ready(function () {
+        // Hide submenus
+        $("#body-row .collapse").collapse("hide");
+   
+
+        // Collapse/Expand icon
+        $("#collapse-icon").addClass("fa-angle-double-left");
+
+        // Collapse click
+        $("[data-toggle=sidebar-colapse]").click(function () {
+          SidebarCollapse();
+        });
+
+        function SidebarCollapse() {
+          $(".menu-collapsed").toggleClass("d-none");
+          $(".sidebar-submenu").toggleClass("d-none");
+          $(".submenu-icon").toggleClass("d-none");
+          $("#sidebar-container").toggleClass(
+            "sidebar-expanded sidebar-collapsed"
+          );
+
+          // Treating d-flex/d-none on separators with title
+          var SeparatorTitle = $(".sidebar-separator-title");
+          if (SeparatorTitle.hasClass("d-flex")) {
+            SeparatorTitle.removeClass("d-flex");
+          } else {
+            SeparatorTitle.addClass("d-flex");
+          }
+
+          // Collapse/Expand icon
+          $("#collapse-icon").toggleClass(
+            "fa-angle-double-left fa-angle-double-right"
+          );
+        }
+      });
+   </script>
+   
+  </body>
+</html>

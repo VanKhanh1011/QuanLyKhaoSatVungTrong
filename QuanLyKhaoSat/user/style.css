@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth
+    
+}
+body{
+    font-size:16px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+/* .container{
+    width:85%;
+    margin:0 auto;
+} */
+/* banner  */
+.swapper .banner{
+    height: 100vh;
+
+    background-image: url('./img/banner.jpg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+}
+.swapper .banner .banner__content{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content:center;
+    
+    align-items:center;
+    text-align: center;
+    flex-direction: column;
+}
+.swapper .banner .banner__content h2{
+    font-size: 4em;
+    text-transform: capitalize;
+    height: 100px;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Lobster', cursive;
+    line-height: 100px;
+}
+.swapper .banner .banner__content i{
+    margin-top: 10px;
+    font-size:3em ;
+    color: white;
+    cursor: pointer;
+    transition: all 0.6s;
+    animation: truong infinite;
+    transition: all 0.6s;
+
+}
+.swapper .banner .banner__content i:hover{
+margin-top: 20px;
+}
+@keyframes truong{
+    0%{ 
+        padding-top: 10px;
+    }
+    25%{ padding-top: 20px;}
+    75%{ padding-top:10px}
+    100%{ padding-padding-top: 0}
+}
+.swapper .banner .banner__content h2::after,.swapper .banner .banner__content h2::before{
+    content:"";
+    display:block;
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* about-us  */
+.swapper .about-us{
+
+    
+    
+}
+.swapper .about-us .about-us__title h3{
+
+    font-size: 2.5em;
+        text-transform: capitalize;
+        color: #000;
+        margin: 0 17px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 600;
+}
+
+/* info  */
+.info__content{
+    padding: 3em 0;
+}
+.info__content .info-item{
+    background: #16A667;
+    padding: 1.5em 2em;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.info__content .info-item:hover{
+
+    box-shadow:-3px 4px 6px 4px #b8bbba;
+
+}
+.info__content .info-item:hover img{
+    transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    
+
+}
+.info-item__content .info-item__url{
+   display:flex;
+   justify-content: center;
+}
+.info-item__content .info-item__url img{
+    transform:rotate(0);
+    transition: all 0.6s;
+    border-radius: 73px;
+    border: 9px solid #eee;
+    padding: 1em 1em;
+    object-fit: cover;
+    display: block;
+    max-width: 100%;
+    height: 125px;
+    -webkit-transform:rotate(0);
+    -moz-transform:rotate(0);
+    -ms-transform:rotate(0);
+    -o-transform:rotate(0);
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+}
+.info-item__content .info-item__title{
+    font-size: 1.4em;
+    padding: 0.5em 0 0;
+    color: #fff;
+    font-weight: 600;
+}
+.info-item__content .info-item__text{
+    font-size: 1em;
+    padding: 0.5em 0;
+    color: #fff;
+    line-height: 1.8em;
+}
+/* about-us  */
+.swapper .about-us .about-us__content {
+    display:flex;
+    margin-top: 3em;
+
+}
+.swapper .about-us .about-us__content .about-us__right{
+    width:40%;
+    padding: 20px;
+}
+.swapper .about-us .about-us__content .about-us__left{
+    width:60%;
+    padding: 20px;
+}
+
+.swapper .about-us .about-us__content .about-us__right img{
+    width:100%;
+    max-height: 400px;
+    object-fit: cover;
+    box-shadow: -3px 6px 3px 2px #e0d1d1;
+}
+.swapper .about-us .about-us__content .about-us__left p{
+    font-size: 1em;
+
+    color: #555;
+    line-height: 1.7em;
+}
+
+.fruits .fruits__title{
+    font-size: 2.5em;
+    text-transform: capitalize;
+    color: #000;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+}
+.fruits .fruits__content .fruits-item{
+    position: relative;
+    
+    margin-top: 1.5em;
+}
+.fruits .fruits__content .fruits-item:hover{
+cursor: pointer;
+transition: all 0.6s;
+
+
+}
+.fruits-item__url img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.fruits .fruits__content .fruits-item .fruits-item__over{
+    position:absolute;
+    width:100%;
+    top: 0;
+    z-index: 222;
+    left: 0;
+    padding:10px;
+    height: 100%;
+    color:white;
+    font-weight: 500;
+    opacity: 0;
+    transition: all 0.6s ;
+    transition-delay: 1s;
+    -webkit-transition: all 0.6s ;
+    -moz-transition: all 0.6s ;
+    -ms-transition: all 0.6s ;
+    -o-transition: all 0.6s ;
+}
+    .fruits .fruits__content .fruits-item:hover .fruits-item__over{
+        opacity: 1;
+    }
+    .fruits .fruits__content .fruits-item .fruits-item__over::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0%;
+    background-color:rgba(32, 32, 32, 0.4) ;
+    z-index: 22;
+    transition: all 0.6s;
+    top: 0;
+    height: 100%;
+    left: 0;
+
+    }
+.fruits .fruits__content .fruits-item:hover .fruits-item__over:after{
+        width:100%;
+    }
+
+
+.footer{
+    margin-top:2em;
+    width:100%;
+    background-color:rgba(0,0,0,0.8);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+.footer .footer__content{
+    color:white;
+    font-size:2em;
+    font-weight: bold;
+}
